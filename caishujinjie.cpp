@@ -1,38 +1,36 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
-int main(){
-	 srand(time(0));
-	 int a=rand()%100; 
-	 printf("请输入数字：\n");
-	 int x;
-	 int count=0;
-	 int N=4;
-	 do{
-	 	scanf("%d",&x);
-	 	count++;
-	 	if(x>a&&x!=-1){
-	 		printf("too big\n");
-		 }
-		 else if(x<a&&x!=-1){
-		 	printf("too small\n");
-		 	if(count>4){
-		 	 break;
-			 }
-		 	
-		 }
-	 }while(x!=a&&x!=-1);
-	 if(count==1&&x!=-1){
-	 	printf("Bingo!\n");
-	 }
-	 else if(count<3&&x!=-1){
-	 	printf("Lucky You!\n");
-	 }
-	 else if(count>=3&&count<=N&&x!=-1){
-	 	printf("Good Guess!\n");
-	 }
-     else if(count>4||x==-1){
-	 	printf("Game Over!\n");
-	 }
-	return 0;
-}
+ #include<stdio.h>
+  int main(){
+  	int numer,n;
+  	scanf("%d %d",&numer,&n);
+  	int count=0;
+  	  while(1){
+  		int a;
+  		scanf("%d",&a);
+  		count++;
+  		if(a<0||count>4){
+  			printf("Game Over!\n");
+  			break;
+		  }
+		  else if(a<numer){
+		  	printf("Too Small!\n");
+		  }
+		  else if(a>numer){
+		  	printf("Too Big!\n");
+		  }
+		  else  {
+			  	if(count==1){
+			  	printf("Bingo!\n");
+			  	break;
+			  }
+			  else if(count<=3){
+			  	printf("Lucky you!\n");
+			  	break;
+			  }
+			  else  {
+			  	printf(" Good Guess!\n");
+			  	break;
+			  }
+		  }
+	  } 
+  	return 0;
+  }
